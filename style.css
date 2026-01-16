@@ -1,11 +1,13 @@
 :root {
-    --bg-dark: #0f172a;
-    --bg-card: #1e293b;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent-primary: #6366f1;
-    --accent-secondary: #8b5cf6;
-    --accent-glow: rgba(99, 102, 241, 0.4);
+    --bg-dark: #f8fafc; /* Azure/White background */
+    --bg-card: #ffffff; /* Pure white cards */
+    --text-primary: #1e293b; /* Slate 800 */
+    --text-secondary: #64748b; /* Slate 500 */
+    --accent-primary: #6366f1; /* Indigo */
+    --accent-secondary: #8b5cf6; /* Violet */
+    --accent-glow: rgba(99, 102, 241, 0.2); /* Softer glow */
+    --border-color: #e2e8f0; /* Slate 200 */
+    
     --font-main: 'Outfit', sans-serif;
 }
 
@@ -70,7 +72,7 @@ body {
 
 .hero-section h1 {
     font-size: 3.5rem;
-    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -89,12 +91,16 @@ body {
     background: var(--bg-card);
     padding: 2rem;
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(0); /* Remove blur for cleaner light look */
 }
 
-/* CSE Overrides - Aggressive Styling to match Dark Theme */
+/* CSE Overrides - Light Theme Adaptation */
+.gcse-searchbox-only {
+    font-family: var(--font-main);
+}
+
 .gsc-control-cse {
     background-color: transparent !important;
     border: none !important;
@@ -116,8 +122,8 @@ body {
 }
 
 .gsc-input-box {
-    background: rgba(15, 23, 42, 0.6) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: #f1f5f9 !important; /* Light Slate BG */
+    border: 1px solid var(--border-color) !important;
     border-radius: 12px !important;
     height: 50px !important;
     box-shadow: none !important;
@@ -135,15 +141,15 @@ input.gsc-input::placeholder {
     color: var(--text-secondary) !important;
 }
 
-/* Results Styling */
+/* Results Styling - if they were to appear, or for the overlay */
 .gsc-webResult.gsc-result {
     background-color: transparent !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-bottom: 1px solid var(--border-color) !important;
     padding: 1.5rem 0 !important;
 }
 
 .gsc-result .gs-title {
-    color: var(--accent-secondary) !important;
+    color: var(--accent-primary) !important;
     text-decoration: none !important;
     font-size: 1.2rem !important;
     font-family: var(--font-main) !important;
@@ -156,7 +162,7 @@ input.gsc-input::placeholder {
 }
 
 .gsc-url-top, .gsc-url-bottom {
-    color: var(--success) !important; /* Greenish url looks trustworthy */
+    color: #10b981 !important; /* Green */
 }
 
 .gs-image-box {
@@ -169,10 +175,9 @@ input.gsc-input::placeholder {
     display: none !important;
 }
 
-
 /* Hover effects on results */
 .gsc-webResult.gsc-result:hover {
-    background: rgba(255, 255, 255, 0.02) !important;
+    background: #f8fafc !important;
 }
 
 .main-footer {
